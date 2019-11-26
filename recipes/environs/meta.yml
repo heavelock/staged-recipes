@@ -1,0 +1,42 @@
+{% set name = "environs" %}
+{% set version = "6.1.0" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: a69695630145bf559baedd1ac99312abd27cca55cbc1dca7f7a6a2bae7e1570c
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - marshmallow >=2.7.0
+    - pip
+    - python
+    - python-dotenv
+    - dj-database-url
+    - dj-email-url
+  run:
+    - marshmallow >=2.7.0
+    - python
+    - python-dotenv
+    - dj-database-url
+    - dj-email-url
+
+about:
+  home: https://github.com/sloria/environs
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: simplified environment variable parsing
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - heavelock
