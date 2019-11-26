@@ -28,15 +28,20 @@ requirements:
     - dj-database-url
     - dj-email-url
 
+test:
+  imports:
+    - environs
+
 about:
   home: https://github.com/sloria/environs
   license: MIT
   license_family: MIT
-  license_file: 
+  license_file: LICENSE
   summary: simplified environment variable parsing
-  doc_url: 
-  dev_url: 
+  doc_url: https://github.com/sloria/environs/README.MD
+  dev_url: https://github.com/sloria/environs/
 
 extra:
   recipe-maintainers:
     - heavelock
+    -
